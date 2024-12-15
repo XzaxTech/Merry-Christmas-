@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Christmas Card</title>
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  <style>
+    /* Same CSS as before */
+    #card-container {
+      display: none;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color:white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+  color: #d62828;
+  font-family: 'Tangerine', serif;
+  font-size: 50px;
+    }
+    p{
+  color:white;
+  font-family: 'Tangerine', serif;
+  font-size: 35px;
+    }
+    h2 {
+   color:white;
+  font-family: 'Sofia', sans-serif; 
+  font-size: 26px;
+  text-shadow: 4px 4px 4px #aaa;
+    }
+    .form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #d62828;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a71d1d;
+    }
+
+    .cards {
+     width:100%;
+     height:auto;
+      margin-top: 50px;
+      padding: 20px;
+      border: 1px solid #d62828;
+      border-radius: 20px;
+      background-image:url(20241215_001345.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .card-content h2 {
+      color: #d62828;
+    }
+   
+    .card-content p {
+      color: #555;
+    }
+    u{
+    color:white;	
+     width:auto;
+     height:1px;
+    }
+    audio{
+    color:blue;
+    border-radius:2px blue;
+    }
+       .radio-audio:hover, .radio-audio:focus, .radio-audio:active {
+    -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.radio-audio {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -moz-box-shadow: 2px 2px 4px 0px #006773;
+    -webkit-box-shadow: 2px 2px 4px 0px #006773;
+    box-shadow: 2px 2px 4px 0px #006773;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+}
+  </style>
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Send a Merry Christmas Wish</h1>
+    <textarea id="message" placeholder="Name of a friend.... "></textarea>
+    <button onclick="generateCard()">Create Card</button>
+<div class="cards">
+    <div id="cards">
+      <h2>Merry Christmas</h2>
+      <p>Dear</p>
+   <u> <p id="card-message"></p></u>
+      <p>Wishing you joy, peace, and love this festive season. <br>May your holidays sparkle with warmth and your New Year bring endless blessings.
+</p>
+      </div>
+      <audio controls class="radio-audio">
+   <source src="/storage/emulated/0/wish card/y2mate.com - We Wish You a Merry Christmas  Instrumental Christmas Music  Trumpet  Orchestra.mp3" type="audio/mpeg"></audio>
+
+      <div id="share-link">
+        <p>Share your card with a friend:</p>
+        <a id="whatsapp-link" target="_blank" style="color: #25D366;">
+          <i class="fab fa-whatsapp"></i> Share on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generateCard() {
+      var messageText = document.getElementById("message").value;
+      document.getElementById("card-message").textContent = messageText;
+      document.getElementById("card-container").style.display = "block";
+
+      // Generate the WhatsApp share link
+      var cardUrl = window.location.href;
+      var whatsappLink = `https://api.whatsapp.com/send?text=Check out this Christmas card: ${cardUrl}`;
+      document.getElementById("whatsapp-link").href = whatsappLink;
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+</body>
+</html>
