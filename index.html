@@ -132,7 +132,60 @@
     -webkit-border-radius: 7px 7px 7px 7px;
     border-radius: 7px 7px 7px 7px;
 }
-  </style>
+  body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f3f4f7, #ffffff);
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-button img {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+            background-color: #20b958;
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .whatsapp-button:hover::before {
+            opacity: 1;
+        }
   </style>
 </head>
 <body>
@@ -149,12 +202,12 @@
       <audio controls class="radio-audio">
    <source src="y2mate.com - Feliz Navidad acapella VoicePlay ft Cesar Augusto De La Rosa.mp3" type="audio/mpeg"></audio>
 
-      <div id="share-link">
-        <p>Share the link with a friend</p>
-        <a id="whatsapp-link" target="_blank" style="color: #25D366;">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </div>
+      <a href="https://wa.me/?text=Check%20this%20out:%20https://xzaxtech.github.io/Merry-Christmas-/" 
+       target="_blank" 
+       class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        Share on WhatsApp
+      </a>
     </div>
   </div>
 
