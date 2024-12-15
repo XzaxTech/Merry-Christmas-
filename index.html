@@ -186,9 +186,137 @@
         .whatsapp-button:hover::before {
             opacity: 1;
         }
+    #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        /* Pop-up container styling */
+        #popup {
+        	width:500px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            padding: 20px;
+            background: transparent;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Header graphic styling */
+        #popup img{
+            max-width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            margin-bottom: 65px;
+        }
+
+        /* Button styling */
+        #popup button {
+        	margin-right:70px;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-buttom: 40px;
+        }
+
+        #popup button:hover {
+            background: #218838;
+        }
+    #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        /* Pop-up container styling */
+        #popup {
+        	width:500px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            padding: 20px;
+            background: transparent;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Header graphic styling */
+        #popup img{
+            max-width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            margin-bottom: 65px;
+        }
+
+        /* Button styling */
+        #popup button {
+        	margin-right:70px;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-buttom: 40px;
+        }
+
+        #popup button:hover {
+            background: #218838;
+        }
+    
   </style>
 </head>
+  
 <body>
+  <div id="overlay"></div>
+
+    <!-- Pop-Up Ad -->
+    <div id="popup">
+    	<p>Free 4k wallpapers</p>
+    	<a href="https://whatsapp.com/channel/0029VawrdoF0bIdv5rWsDZ2m">
+ <img src="/storage/emulated/0/Adds/20241215_195931.jpg"></a>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // JavaScript to control the pop-up
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }, 3000); // Delay of 3 seconds
+        };
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
   <div class="card">
     <h1>Send a Merry Christmas Wish</h1>
 <div class="cards">
